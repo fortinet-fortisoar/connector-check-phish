@@ -1,0 +1,103 @@
+{
+  "name": "check-phish",
+  "label": "Check Phish",
+  "description": "CheckPhish is free scanner to detect phishing & fraudulent sites in real-time.",
+  "publisher": "Community",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Threat Intelligence",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "value": "https://developers.checkphish.ai"
+      },
+      {
+        "title": "API Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key"
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_url_info",
+      "title": "Get URL Information",
+      "description": "Retrieves URL information from CheckPhish.",
+      "category": "investigation",
+      "annotation": "get_url_info",
+      "output_schema": {
+        "job_id": "",
+        "status": "",
+        "url": "",
+        "url_sha256": "",
+        "disposition": "",
+        "brand": "",
+        "insights": "",
+        "resolved": "",
+        "screenshot_path": "",
+        "error": ""
+      },
+      "parameters": [
+        {
+          "title": "URL",
+          "name": "url",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "placeholder": "www.example.com",
+          "tooltip": "Specify the url information.",
+          "description": "Specify the url information."
+        },
+        {
+          "title": "Scan Type",
+          "name": "scanType",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Quick",
+            "Full"
+          ],
+          "tooltip": "Specify the scan type.",
+          "description": "Specify the url information."
+        },
+        {
+          "title": "Insights",
+          "name": "insights",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "checkbox",
+          "value": true,
+          "tooltip": "If insights: true in the query then it insight, Screenshot Path and resolved additional fields will returned in response.",
+          "description": "If insights: true in the query then it insight, Screenshot Path and resolved additional fields will returned in response."
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
