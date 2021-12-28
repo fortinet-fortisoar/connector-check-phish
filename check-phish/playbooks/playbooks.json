@@ -1,0 +1,122 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Check Phish - 1.0.0",
+      "description": "Sample playbooks for \"Check Phish\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/bcf7b330-f656-4147-aa00-43feb6ada0c2",
+      "uuid": "3660c652-6075-465a-a496-5b49df003bd1",
+      "id": 151,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1639468863,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1639468863,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get URL Information",
+          "aliasName": null,
+          "tag": "#Check Phish",
+          "description": "Retrieves URL information from CheckPhish.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639469692,
+          "collection": "/api/3/workflow_collections/3660c652-6075-465a-a496-5b49df003bd1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/83228656-afdc-464e-b18b-d5a00068230b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get URL Information",
+              "description": null,
+              "arguments": {
+                "name": "Check Phish",
+                "config": "9c77cdeb-3e98-4207-81a4-f9ed18999966",
+                "params": {
+                  "url": "https://webafit.noip.us/",
+                  "insights": true,
+                  "scanType": "Full"
+                },
+                "version": "1.0.0",
+                "connector": "check-phish",
+                "operation": "get_url_info",
+                "operationTitle": "Get URL Information",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "65a1de96-cfaf-41fe-b805-0a061a14c3ad",
+              "id": 7363
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "0743d218-a073-46d1-afbe-aa276e435ac2",
+                "title": "Check Phish: Get URL Information",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "83228656-afdc-464e-b18b-d5a00068230b",
+              "id": 7362
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get URL Information",
+              "targetStep": "/api/3/workflow_steps/65a1de96-cfaf-41fe-b805-0a061a14c3ad",
+              "sourceStep": "/api/3/workflow_steps/83228656-afdc-464e-b18b-d5a00068230b",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "cc75d796-2228-4e3b-b963-f2b83268bfb6"
+            }
+          ],
+          "priority": null,
+          "uuid": "951779b9-8e4d-41ff-8cc2-07d817d4ae2e",
+          "recordTags": [
+            "CheckPhish",
+            "URL"
+          ],
+          "id": 1535,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639468863,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639469691,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "CheckPhish",
+    "URL"
+  ]
+}
