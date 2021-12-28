@@ -7,9 +7,7 @@ Copyright end
 """
 
 import json
-
 import requests
-
 from connectors.core.connector import get_logger, ConnectorError
 
 logger = get_logger('check-phish')

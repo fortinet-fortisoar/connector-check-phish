@@ -3,7 +3,7 @@
   "label": "Check Phish",
   "description": "CheckPhish is free scanner to detect phishing & fraudulent sites in real-time.",
   "publisher": "Community",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "version": "1.0.0",
   "category": "Threat Intelligence",
@@ -68,8 +68,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "www.example.com",
-          "tooltip": "Specify the url information.",
-          "description": "Specify the url information."
+          "tooltip": "Specify the url.",
+          "description": "Specify the URL for which you need to retrieve the  information."
         },
         {
           "title": "Scan Type",
@@ -83,7 +83,7 @@
             "Full"
           ],
           "tooltip": "Specify the scan type.",
-          "description": "Specify the url information."
+          "description": "Select the scan type. Available options are Quick and Full."
         },
         {
           "title": "Insights",
