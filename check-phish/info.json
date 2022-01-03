@@ -19,7 +19,8 @@
         "visible": true,
         "type": "text",
         "name": "server_url",
-        "value": "https://developers.checkphish.ai"
+        "value": "https://developers.checkphish.ai",
+        "description": "The URL of the Check Phish server to which you will connect and perform the automated operations."
       },
       {
         "title": "API Key",
@@ -27,7 +28,8 @@
         "editable": true,
         "visible": true,
         "type": "password",
-        "name": "api_key"
+        "name": "api_key",
+        "description": "The API Key used to access the Check Phis server to which you will connect and perform the automated operations."
       },
       {
         "title": "Verify SSL",
@@ -36,7 +38,8 @@
         "visible": true,
         "type": "checkbox",
         "name": "verify_ssl",
-        "value": true
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
       }
     ]
   },
